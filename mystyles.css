@@ -12,3 +12,7 @@
     transform: rotate(1440deg);
   }
 }
+
+.hiding {
+  display: none;
+}
