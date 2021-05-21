@@ -1,4 +1,4 @@
-.sping {
+/* .spinspinspin {
   animation-name: spin;
   animation-duration: 1.0s;
   animation-iteration-count: infinite;
@@ -6,13 +6,9 @@
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   100% {
-    transform: rotate(1440deg);
+      transform: rotate(1440deg);
   }
-}
-
-.hiding {
-  display: none;
-}
+} */
