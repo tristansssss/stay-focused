@@ -1,14 +1,18 @@
 // let active_tab_id = 0;
 
-// chrome.tabs.onActivated.addListener(tab => {
-//   console.log("activated");
+chrome.tabs.onActivated.addListener((tab) => {
+  console.log("on activated");
+  chrome.tabs.query({ url: "https://*.youtube.com/*" }, (tabs) => {
+    console.log("sending");
+    tabs.forEach((tab) => {
+      console.log(tab);
+      let tabUrl = tab.url;
+      chrome.tabs.sendMessage(tab.id, { tabUrl });
+    });
+  });
 
-//     chrome.tabs.get(tab.tabId, current_tab_info => {
-//         active_tab_id = tab.tabId;
-//         console.log(current_tab_info.url);
+});
 
-//         if (/^https:\/\/www\.google/.test(current_tab_info.url)) {
-
-//         }
-//     });
-// });
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  console.log("on updated")
+});
