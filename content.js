@@ -1,4 +1,3 @@
-console.log("you'r in the world of content.js");
 
 chrome.runtime.onMessage.addListener((request) => {
   console.log("on message")
@@ -15,15 +14,3 @@ chrome.runtime.onMessage.addListener((request) => {
   });
 });
 
-// // when we get message set focused url
-// chrome.runtime.onMessage.addListener((request) => {
-//   chrome.storage.local.get('currentUrl', (response) => {
-//     if (response.currentUrl !== focusUrl) {
-//       alert("it doesnt match")
-//     }
-//   });
-
-//   if (request.focusUrl){
-//     focusUrl = request.focusUrl;
-//   }
-// });

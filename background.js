@@ -1,4 +1,3 @@
-// let active_tab_id = 0;
 
 chrome.tabs.onUpdated.addListener((tab) => {
   console.log("on activated");

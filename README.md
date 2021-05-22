@@ -18,6 +18,13 @@ chrome://extensions/
 // click again to unfocus
 ```
 
-### Bug report
+### Bug report / issues
+```
+background and content gets caught in infinite loop and keeps reloading the youtube page 
+occurernce: rarely
+
+Temporary solution: disable and re enable in extensions tab to fix.
+Please let me know if you have a solution
+```
 tzrtg@protonmail.com
 
