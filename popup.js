@@ -22,8 +22,10 @@ document.querySelector("#focus-btn").addEventListener("click", () => {
   // console.log(colour);
   chrome.tabs.query({ url: "https://*.youtube.com/*" }, (tabs) => {
     focusUrl = currentUrl
-    tabs.forEach((tab) => {
-      chrome.tabs.sendMessage(tab.id, { focusUrl });
-    });
+    chrome.tabs.sendMessage({ focusUrl });
+
+    // tabs.forEach((tab) => {
+    //   chrome.tabs.sendMessage(tab.id, { focusUrl });
+    // });
   });
 });
