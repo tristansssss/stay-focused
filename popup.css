@@ -1,8 +1,12 @@
+body {
+  padding: 10px;
+}
 button {
-  background-color: blue; /* Green */
+  margin: 10px;
+  background-color: blue; /* blue */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -10,10 +14,11 @@ button {
 }
 
 button:disabled {
-  background-color: grey; /* Green */
+  margin: 10px;
+  background-color: grey; /* grey */
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
