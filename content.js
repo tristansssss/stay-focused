@@ -1,23 +1,13 @@
-// document.querySelector('.lnXdpd').classList.add('spinspinspin');
 
-// chrome.tabs.addListener(tab => {
-//   chrome.tabs.get(tab.tabId, current_tab_info => {
-//     console.log(current_tab_info.url);
-//   })
-// })
-
-chrome.storage.local.get('colour', (response) => {
-  if (response.colour) {
-    document.body.style.backgroundColor = response.colour;
-  }
+chrome.runtime.onMessage.addListener((request) => {
+  // let blockedHtmlUrl = chrome.extension.getURL("blocked.html");
+  chrome.storage.local.get("focusUrl", (response) => {
+    if (request.tabUrl !== response.focusUrl) {
+      // console.log(blockedHtmlUrl)
+      window.location.href = response.focusUrl;
+    } else {
+      console.log("were focusing")
+    }
+  });
 });
 
-
-chrome.runtime.onMessage.addListener(request => {
-  console.log(request);
-  console.log(chrome.extension.getURL("blocked.html"));
-
-  if (request.colour) {
-    document.body.style.backgroundColor = request.colour;
-  }
-});
