@@ -13,7 +13,6 @@ chrome.runtime.onMessage.addListener((request) => {
       console.log("were focusing")
     }
   });
-
 });
 
 // // when we get message set focused url

@@ -11,11 +11,6 @@ chrome.tabs.query({ active: true }, (tabs) => {
 
   chrome.storage.onChanged.addListener((changes, namespace) => {
     for (let [key, { oldValue, newValue }] of Object.entries(changes)) {
-      // console.log(
-      //   `Storage key "${key}" in namespace "${namespace}" changed.`,
-      //   `Old value was "${oldValue}", new value is "${newValue}".`
-      // );
-      // if the current url is not a youtube link and we are unfocused
       if (!regex.test(currentUrl) && newValue == undefined){
         console.log("onChanged 1")
         console.log("onChanged - not a youtube link and were unfocused");
