@@ -1,17 +1,25 @@
-document
-.querySelector('#colour-submit-btn')
-.addEventListener('click', () => {
-  console.log("clicked")
+const focusButton = document.querySelector("#focus-btn");
+const regex = new RegExp("https://www.youtube.com/watch*");
+
+chrome.tabs.query({ active: true }, (tabs) => {
+  console.log(tabs);
+    if (!regex.test(tabs[0].url)) {
+      focusButton.disabled = true;
+    } else {
+      focusButton.disabled = false;
+    }
+});
+
+document.querySelector("#focus-btn").addEventListener("click", () => {
+  console.log("clicked");
   // read the colour that the user has selected
-  const colour = document.querySelector('#colour-input').value;
+  const colour = document.querySelector("#colour-input").value;
 
-  chrome.storage.local.set({ colour });
-
-  // get all the google tabs and send a message to their tabs 
+  // get all the google tabs and send a message to their tabs
   console.log(colour);
-  chrome.tabs.query({ url: 'https://*.google.com/*' }, tabs => {
-    tabs.forEach(tab => 
-      chrome.tabs.sendMessage(tab.id, { colour } )
-    );
+  chrome.tabs.query({ url: "https://*.youtube.com/*" }, (tabs) => {
+    tabs.forEach((tab) => {
+      chrome.tabs.sendMessage(tab.id, { colour });
+    });
   });
 });
