@@ -1,31 +1,29 @@
 const focusButton = document.querySelector("#focus-btn");
 const regex = new RegExp("https://www.youtube.com/watch*");
-let currentUrl = ""
-let focusUrl
+let currentUrl = "";
 
+// handle button disabled
 chrome.tabs.query({ active: true }, (tabs) => {
   console.log(tabs);
-    if (!regex.test(tabs[0].url)) {
-      focusButton.disabled = true;
-    } else {
-      focusButton.disabled = false;
-      currentUrl = tabs[0].url;
-    }
+  if (!regex.test(tabs[0].url)) {
+    focusButton.disabled = true;
+  } else {
+    focusButton.disabled = false;
+    currentUrl = tabs[0].url;
+  }
 });
-//
+
+chrome.storage.local.set({ currentUrl });
+
+
+// button clicked
+// if its a youtube url send it
 document.querySelector("#focus-btn").addEventListener("click", () => {
   console.log("clicked");
-  // read the colour that the user has selected
-  // const colour = document.querySelector("#colour-input").value;
-
-  // get all the google tabs and send a message to their tabs
-  // console.log(colour);
   chrome.tabs.query({ url: "https://*.youtube.com/*" }, (tabs) => {
-    focusUrl = currentUrl
-    chrome.tabs.sendMessage({ focusUrl });
-
-    // tabs.forEach((tab) => {
-    //   chrome.tabs.sendMessage(tab.id, { focusUrl });
-    // });
+    tabs.forEach(tab => {
+      focusUrl = tabs[0].url
+      chrome.tabs.sendMessage(tab.id, { focusUrl })
+    })
   });
 });
