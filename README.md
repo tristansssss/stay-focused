@@ -9,7 +9,7 @@ A google chrome extension that focuses on a single youtube video and redirects b
 # Installation
 ```
 // clone repositiory
-git clone
+git clone https://github.com/tzrtg/stay-focused
 // In chrome, navigate to extensions. 
 chrome://extensions/
 // click load unpacked and select stay-focused
@@ -19,12 +19,12 @@ chrome://extensions/
 ```
 
 ### Bug report / issues
-```
-background and content gets caught in infinite loop and keeps reloading the youtube page 
-occurernce: rarely
 
-Temporary solution: disable and re enable in extensions tab to fix.
-Please let me know if you have a solution
-```
+1. background and content gets caught in a loop and keeps reloading the same url.
+**occurrence:** rarely
+
+2. hiding related videos only gets hidden after a page refresh.
+**occurrence:** constant
+
 tzrtg@protonmail.com
 
