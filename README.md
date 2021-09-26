@@ -7,16 +7,18 @@ A google chrome extension that focuses on a single youtube video and redirects b
 
 
 # Installation
+
+#### clone repositiory
 ```
-// clone repositiory
 git clone https://github.com/tzrtg/stay-focused
-// In chrome, navigate to extensions. 
-chrome://extensions/
-// click load unpacked and select stay-focused
-// go a youtube video tutorial you would like to focus on and click the top 'stay-focus' (kirby) icon in browser
-// then click focus
-// click unfocus to unset 'focused' url
 ```
+#### In chrome, navigate to extensions. 
+chrome://extensions/
+#### click load unpacked and select stay-focused
+#### go a youtube video tutorial you would like to focus on and click the top 'stay-focus' (kirby) icon in browser
+#### then click focus
+#### click unfocus to unset 'focused' url
+
 
 ### Bug report / issues
 
