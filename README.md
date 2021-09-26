@@ -8,7 +8,7 @@ A google chrome extension that focuses on a single youtube video and redirects b
 
 # Installation
 
-#### clone repositiory
+#### Clone repositiory
 ```
 git clone https://github.com/tzrtg/stay-focused
 ```
